@@ -11,7 +11,8 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var redCount: UILabel!
     @IBOutlet weak var greenCount: UILabel!
-    @IBOutlet weak var BlueCount: UILabel!
+    @IBOutlet weak var blueCount: UILabel!
+    
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colorView.layer.cornerRadius = 10
+        colorView.layer.cornerRadius = 20
         setViewColor()
     }
     
@@ -34,16 +35,20 @@ class ViewController: UIViewController {
     }
     @IBAction func setBlueCount() {
         setViewColor()
-        setLabelCount(label: BlueCount, slider: blueSlider)
+        setLabelCount(label: blueCount, slider: blueSlider)
     }
     
     private func setViewColor() {
-        colorView.backgroundColor = .init(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        colorView.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value),
+                                            green: CGFloat(greenSlider.value),
+                                            blue: CGFloat(blueSlider.value),
+                                            alpha: 1)
         
     }
     
     private func setLabelCount (label: UILabel, slider: UISlider) {
-        label.text = String(round (slider.value * 100) / 100)
+        //label.text = String(round (slider.value * 100) / 100)
+        label.text = String(format: "%0.2f", slider.value)
     }
 }
 

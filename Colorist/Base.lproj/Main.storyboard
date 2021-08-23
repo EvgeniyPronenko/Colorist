@@ -118,7 +118,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="BlueCount" destination="lAm-8i-3Tj" id="W6B-ba-cAy"/>
+                        <outlet property="blueCount" destination="lAm-8i-3Tj" id="W6B-ba-cAy"/>
                         <outlet property="blueSlider" destination="aiN-vG-8Ss" id="wrE-aq-mO4"/>
                         <outlet property="colorView" destination="7sR-mA-kjx" id="HJA-i4-58g"/>
                         <outlet property="greenCount" destination="2Ut-BC-b0p" id="8km-5x-rvT"/>
