@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-   
+    
     @IBOutlet weak var redCount: UILabel!
     @IBOutlet weak var greenCount: UILabel!
     @IBOutlet weak var blueCount: UILabel!
@@ -39,15 +39,16 @@ class ViewController: UIViewController {
     }
     
     private func setViewColor() {
-        colorView.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value),
-                                            green: CGFloat(greenSlider.value),
-                                            blue: CGFloat(blueSlider.value),
-                                            alpha: 1)
+        colorView.backgroundColor = UIColor(
+            displayP3Red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
         
     }
     
     private func setLabelCount (label: UILabel, slider: UISlider) {
-        //label.text = String(round (slider.value * 100) / 100)
         label.text = String(format: "%0.2f", slider.value)
     }
 }
